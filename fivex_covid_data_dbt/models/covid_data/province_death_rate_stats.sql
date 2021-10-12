@@ -4,8 +4,8 @@
 with source_covid_data as (
     select 
     PROVINCE,
-    sum(TOTAL_DEATHS) AS TOTAL_DEATHS,
-    SUM(TOTAL_CASES) AS TOTAL_CASES
+    sum(NEW_DEATHS) AS TOTAL_DEATHS,
+    SUM(NEW_CASES) AS TOTAL_CASES
     from {{ source("covid_data", "COVID_19_INDONESIA_ASWIN_RAJARAM") }}
     WHERE LOCATION_LEVEL = 'Province'
     GROUP BY PROVINCE
